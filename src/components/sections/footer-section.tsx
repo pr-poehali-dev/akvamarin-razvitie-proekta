@@ -65,6 +65,10 @@ export function FooterSection() {
               <Icon name="MapPin" size={14} />
               <span>ул. Клименкова</span>
             </div>
+            <div className="flex items-center gap-2 text-muted-foreground text-sm mb-2">
+              <Icon name="Phone" size={14} />
+              <a href="tel:89269803456" className="hover:text-foreground transition-colors" data-clickable>+7 926 980-34-56</a>
+            </div>
             <p className="text-muted-foreground text-sm mb-4">Напишите о вашем проекте — отвечу в течение дня.</p>
             {sent ? (
               <motion.p
