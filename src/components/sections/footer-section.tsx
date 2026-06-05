@@ -61,6 +61,10 @@ export function FooterSection() {
 
           {/* Contact form */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <div className="flex items-center gap-2 text-muted-foreground text-sm mb-2">
+              <Icon name="MapPin" size={14} />
+              <span>ул. Клименкова</span>
+            </div>
             <p className="text-muted-foreground text-sm mb-4">Напишите о вашем проекте — отвечу в течение дня.</p>
             {sent ? (
               <motion.p
