@@ -1,6 +1,6 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 const footerLinks = [
   { label: "Проекты", href: "#" },
@@ -11,6 +11,15 @@ const footerLinks = [
 
 export function FooterSection() {
   const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [sent, setSent] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+    window.location.href = `mailto:camolet@lkj.ry?subject=Запрос с сайта&body=${encodeURIComponent(message)}%0A%0AОт: ${encodeURIComponent(email)}`
+    setSent(true)
+  }
 
   return (
     <footer className="relative bg-background px-6 py-24 overflow-hidden">
@@ -50,25 +59,44 @@ export function FooterSection() {
             </nav>
           </div>
 
-          {/* Email signup */}
+          {/* Contact form */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <p className="text-muted-foreground text-sm mb-4">Напишите о вашем проекте — отвечу в течение дня.</p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Введите email"
-                className="flex-1 bg-secondary border-0 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button
-                type="submit"
-                className="bg-foreground text-background p-3 rounded-lg hover:bg-foreground/90 transition-colors"
-                data-clickable
+            {sent ? (
+              <motion.p
+                className="text-foreground font-serif text-lg"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
               >
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </form>
+                Спасибо! Открываю почтовый клиент…
+              </motion.p>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Ваш email"
+                  required
+                  className="bg-secondary border-0 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <textarea
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Расскажите о проекте..."
+                  rows={3}
+                  className="bg-secondary border-0 rounded-lg px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                />
+                <button
+                  type="submit"
+                  className="flex items-center justify-center gap-2 bg-foreground text-background py-3 px-6 rounded-lg hover:bg-foreground/90 transition-colors font-medium"
+                  data-clickable
+                >
+                  Отправить сообщение
+                  <Icon name="ArrowRight" size={16} />
+                </button>
+              </form>
+            )}
           </motion.div>
         </div>
 
