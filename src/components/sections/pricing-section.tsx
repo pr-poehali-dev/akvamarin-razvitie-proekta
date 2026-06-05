@@ -3,18 +3,18 @@ import { Check } from "lucide-react"
 
 const plans = [
   {
-    name: "Старт",
-    price: "1 200",
-    period: " руб/мес",
-    description: "Для личного портфолио",
-    features: ["5 страниц", "Свой домен", "Базовая аналитика", "Поддержка по email"],
+    name: "Консультация",
+    price: "15 000",
+    period: " руб",
+    description: "Разовая техническая консультация",
+    features: ["Анализ задачи", "Техническое заключение", "Рекомендации по проекту", "Ответы на вопросы"],
   },
   {
-    name: "Про",
-    price: "2 900",
-    period: " руб/мес",
-    description: "Для растущих авторов",
-    features: ["Безлимит страниц", "Приоритет поддержки", "Расширенная аналитика", "Свой брендинг", "Работа в команде"],
+    name: "Проект",
+    price: "от 80 000",
+    period: " руб",
+    description: "Полное инженерное сопровождение",
+    features: ["Проектирование конструкции", "Аэродинамические расчёты", "Прочностной анализ", "Сопровождение испытаний", "Техническая документация"],
     popular: true,
   },
 ]
@@ -29,8 +29,8 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Простые и понятные цены</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно, платите когда готовы.</p>
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Форматы сотрудничества</h2>
+          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Выберите подходящий формат — от консультации до полного проектирования.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -75,7 +75,7 @@ export function PricingSection() {
                     : "bg-secondary text-foreground hover:bg-accent/30"
                 }`}
               >
-                Начать
+                Обсудить проект
               </button>
             </motion.div>
           ))}

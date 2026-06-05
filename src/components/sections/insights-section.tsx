@@ -5,24 +5,24 @@ import { ArrowRight } from "lucide-react"
 
 const articles = [
   {
-    title: "Искусство визуального сторителлинга",
-    category: "Дизайн",
-    image: "/visual-storytelling-design-article.jpg",
+    title: "Аэродинамика крыла: от теории к практике",
+    category: "Аэродинамика",
+    image: "https://cdn.poehali.dev/projects/bac6afcf-e00b-406c-90cb-a2017aa31147/files/1059ce9f-6066-466f-a535-7fe90cc2bb89.jpg",
   },
   {
-    title: "Как создать личный бренд онлайн",
-    category: "Стратегия",
-    image: "/personal-branding-digital-marketing.jpg",
+    title: "Как проводятся лётные испытания новых самолётов",
+    category: "Испытания",
+    image: "https://cdn.poehali.dev/projects/bac6afcf-e00b-406c-90cb-a2017aa31147/files/862c5b31-dfa0-44e0-882d-7826b323b599.jpg",
   },
   {
-    title: "Тренды типографики 2025",
-    category: "Типографика",
-    image: "/typography-trends-modern-fonts.jpg",
+    title: "Прочностной расчёт авиационных конструкций",
+    category: "Инженерия",
+    image: "https://cdn.poehali.dev/projects/bac6afcf-e00b-406c-90cb-a2017aa31147/files/e28617e7-966b-45a0-9600-63aa04345c02.jpg",
   },
   {
-    title: "Минимализм в дизайне портфолио",
-    category: "Вдохновение",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Материалы будущего в авиастроении",
+    category: "Технологии",
+    image: "https://cdn.poehali.dev/projects/bac6afcf-e00b-406c-90cb-a2017aa31147/files/1059ce9f-6066-466f-a535-7fe90cc2bb89.jpg",
   },
 ]
 
@@ -43,7 +43,7 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Статьи
+          Публикации
         </motion.p>
 
         <div className="divide-y divide-border">

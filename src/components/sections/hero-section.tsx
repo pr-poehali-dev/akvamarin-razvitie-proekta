@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
-  "/minimal-architecture-portfolio-with-clean-lines.jpg",
-  "/fashion-photography-editorial-black-and-white.jpg",
-  "/modern-ui-design-portfolio-mockup.jpg",
+  "https://cdn.poehali.dev/projects/bac6afcf-e00b-406c-90cb-a2017aa31147/files/e28617e7-966b-45a0-9600-63aa04345c02.jpg",
+  "https://cdn.poehali.dev/projects/bac6afcf-e00b-406c-90cb-a2017aa31147/files/1059ce9f-6066-466f-a535-7fe90cc2bb89.jpg",
+  "https://cdn.poehali.dev/projects/bac6afcf-e00b-406c-90cb-a2017aa31147/files/862c5b31-dfa0-44e0-882d-7826b323b599.jpg",
 ]
 
 export function HeroSection() {
@@ -78,7 +78,7 @@ export function HeroSection() {
         transition={{ duration: 1, delay: 0.8 }}
       >
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
-          Ваши работы, <em className="italic">в фокусе</em>.
+          Инженерия, <em className="italic">в небе</em>.
         </h1>
       </motion.div>
 
